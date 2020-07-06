@@ -265,11 +265,14 @@ function get20s(arr, string) {
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
  */
-function removeArtist() {
+function removeArtist(artists) {
 
-
+    artists.splice(0, 1);
 
 }
+removeArtist(artists);
+console.log(artists.length);
+
 
 
 
@@ -290,10 +293,12 @@ At the end, this function should return the new array with information added"*/
 
 function addArtist() {
 
-    let newArtist = ({ id: 20, name: "Lakendria McCullough", years: 1991 - 'June 26, 2020', genre: "Web Design", nationality: "American", bio: "lorem ipsum" });
-    return;
+    let newArtist = ({ id: 20, name: "Lakendria McCullough", years: 1991 - 'June 26, 2020', genre: "Web Design", nationality: "American", bio: "Aspiring Software Developer." });
+    return artists.push(newArtist);
 
 }
+addArtist();
+console.log(artists);
 
 
 
@@ -305,9 +310,10 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(arr) {
+function lotsOfArt(artists) {
 
-
+    // Access the artists whom painted more than 100 paintings
+    // return the artists
 }
 
 
