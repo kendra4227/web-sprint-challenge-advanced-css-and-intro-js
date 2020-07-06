@@ -212,8 +212,12 @@ console.log(artists[2].bio);
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-//artists.splice('Vincent Van Gogh');
-//console.log(artists[8].name);
+
+console.log(artists[8].name);
+artists[8].name = "Vincent van Gogh";
+console.log(artists[8].name);
+console.log(artists[8]);
+
 
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
@@ -224,18 +228,29 @@ console.log(artists[2].bio);
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
  */
-function getArtistByIndex(array, index) {
-    return array[index];
+function getArtistByIndex(arr, index) {
+    let string = "";
+    string = `The artist at index ${index} is ${arr[index].name}`;
+    return string;
 }
 console.log(getArtistByIndex(artists, 0));
-/**
+
+
+
 
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s( /* Code here */ ) {
+function get20s(arr, string) {
+    let CenturyArtists = [string];
+    for (i = 0; i < arr.length(); i++) {
+        if ((string.charAt(1) === '9') && (string.charAt(8) === '9')) {
+            console.log(CenturyArtists);
 
-    /* Code here */
+
+        }
+        get20s(artists, string);
+    }
 
 }
 
@@ -250,9 +265,13 @@ function get20s( /* Code here */ ) {
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
  */
-function removeArtist( /*code here*/ ) {
-    /* code here */
+function removeArtist() {
+
+
+
 }
+
+
 
 
 
@@ -271,10 +290,12 @@ At the end, this function should return the new array with information added"*/
 
 function addArtist() {
 
-    artists.newArtist = { id: 20, name: "Lakendria McCullough", years: 1991 - 'June 26, 2020', genre: "Web Design", nationality: "American", bio: "lorem ipsum" };
+    let newArtist = ({ id: 20, name: "Lakendria McCullough", years: 1991 - 'June 26, 2020', genre: "Web Design", nationality: "American", bio: "lorem ipsum" });
+    return;
 
 }
-console.log(artists);
+
+
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
