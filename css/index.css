@@ -245,6 +245,8 @@ button:hover {
     }
     .artists-container {
         flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
     img {
         max-width: 100%;

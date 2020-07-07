@@ -241,18 +241,22 @@ console.log(getArtistByIndex(artists, 0));
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(arr, string) {
-    let CenturyArtists = [string];
-    for (i = 0; i < arr.length(); i++) {
-        if ((string.charAt(1) === '9') && (string.charAt(8) === '9')) {
-            console.log(CenturyArtists);
+function get20s(arr) {
+    let CenturyArtists = [];
+    let num = [];
+    for (i = 0; i < arr.length; i++) {
+        num = parseInt(arr[i].years);
+        if (num > 1900) {
+            CenturyArtists.push(arr[i].name);
+
 
 
         }
-        get20s(artists, string);
-    }
 
+    }
+    return CenturyArtists;
 }
+console.log(get20s(artists));
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -265,12 +269,12 @@ function get20s(arr, string) {
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
  */
-function removeArtist(artists) {
+function removeArtist(artists, index) {
 
-    artists.splice(0, 1);
+    artists.splice(index, 1);
 
 }
-removeArtist(artists);
+removeArtist(artists, 0);
 console.log(artists.length);
 
 
@@ -293,7 +297,7 @@ At the end, this function should return the new array with information added"*/
 
 function addArtist() {
 
-    let newArtist = ({ id: 20, name: "Lakendria McCullough", years: 1991 - 'June 26, 2020', genre: "Web Design", nationality: "American", bio: "Aspiring Software Developer." });
+    let newArtist = ({ id: 20, name: "Lakendria McCullough", years: "1991 - June 26, 2020", genre: "Web Design", nationality: "American", bio: "Aspiring Software Developer." });
     return artists.push(newArtist);
 
 }
@@ -310,12 +314,19 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(artists) {
+function lotsOfArt(arr) {
+    let mostPaintings = [];
+    let num1 = [];
+    for (i = 0; i < arr.length; i++) {
+        num1 = parseInt(arr[i].paintings)
+        if (num1 > 100) {
+            mostPaintings.push(arr[i].name);
+        }
 
-    // Access the artists whom painted more than 100 paintings
-    // return the artists
+    }
+    return mostPaintings;
 }
-
+console.log(lotsOfArt(artists));
 
 
 // 🎨🎨 STRETCH 🎨🎨//
